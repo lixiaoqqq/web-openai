@@ -1,5 +1,0 @@
-gpk-web-prod:
-    image: gmirror/gpk-web:latest
-    command: bash -c "pm2 start processes.json && pm2 status && nginx -g 'daemon off;'"
-    ports:
-      - "8002:80"
