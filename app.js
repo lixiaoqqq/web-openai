@@ -11,279 +11,279 @@ app.use(cors());
 
 
 
-// // 静态资源
-// app.use(express.static(path.join(__dirname, 'dist')));
+// 静态资源
+app.use(express.static(path.join(__dirname, 'dist')));
 
-// // 所有路由请求都返回 Vue 应用程序的 HTML 文件
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'dist/index.html'));
+// 所有路由请求都返回 Vue 应用程序的 HTML 文件
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
+// app.get('/tongji',(req,res)=>{
+//   // const sql = `SELECT * FROM tongji where m1`;
+//  const sql = `SELECT * FROM tongji`;
+//   //   const values = [
+//   //   releForm.Youname,
+//   // ];
+
+//   db.query(sql, (err, result) => {
+//     if (err) {
+//       return res.send({ state: 1, message: err });
+//     }
+//     if (result) {
+//       return res.send({ state: 200, message: "添加成功", data: result });
+//     } else {
+//       return res.send({ state: 2, message: "失败", data: result });
+//     }
+//   });
+// })
+
+
+
+// app.get('/tongjis',(req,res)=>{
+//   // const sql = `SELECT * FROM tongji where m1`;
+//  const sql = `SELECT * FROM tongji`;
+//   //   const values = [
+//   //   releForm.Youname,
+//   // ];
+
+//   db.query(sql, (err, result) => {
+//     if (err) {
+//       return res.send({ state: 1, message: err });
+//     }
+//     if (result) {
+//       // console.log(result,'result');
+//       return res.send({ state: 200, message: "添加成功", data: [result[0].m1,result[0].m2,result[0].m3,result[0].m4,result[0].m5,result[0].m6,result[0].m7,result[0].btntj,result[0].pos1,result[0].pos100] });
+//     } else {
+//       return res.send({ state: 2, message: "失败", data: result });
+//     }
+//   });
+// })
+
+
+
+
+
+// app.post('/tjm1',(req,res)=>{
+//     const { tjm1 } = req.body;
+//   // const sql = `SELECT * FROM tongji`;
+//   const sql = `UPDATE tongji SET m1='${tjm1}' where id=0`;
+//     const values = [
+//       tjm1
+//   ];
+
+//   db.query(sql, (err, result) => {
+//     if (err) {
+//       return res.send({ state: 1, message: err });
+//     }
+//     if (result) {
+//       return res.send({ state: 200, message: "添加成功", data: result });
+//     } else {
+//       return res.send({ state: 2, message: "失败", data: result });
+//     }
+//   });
+// })
+
+
+
+// app.post('/tjm2',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET m2='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
+
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
 // });
-
-app.get('/tongji',(req,res)=>{
-  // const sql = `SELECT * FROM tongji where m1`;
- const sql = `SELECT * FROM tongji`;
-  //   const values = [
-  //   releForm.Youname,
-  // ];
-
-  db.query(sql, (err, result) => {
-    if (err) {
-      return res.send({ state: 1, message: err });
-    }
-    if (result) {
-      return res.send({ state: 200, message: "添加成功", data: result });
-    } else {
-      return res.send({ state: 2, message: "失败", data: result });
-    }
-  });
-})
-
-
-
-app.get('/tongjis',(req,res)=>{
-  // const sql = `SELECT * FROM tongji where m1`;
- const sql = `SELECT * FROM tongji`;
-  //   const values = [
-  //   releForm.Youname,
-  // ];
-
-  db.query(sql, (err, result) => {
-    if (err) {
-      return res.send({ state: 1, message: err });
-    }
-    if (result) {
-      // console.log(result,'result');
-      return res.send({ state: 200, message: "添加成功", data: [result[0].m1,result[0].m2,result[0].m3,result[0].m4,result[0].m5,result[0].m6,result[0].m7,result[0].btntj,result[0].pos1,result[0].pos100] });
-    } else {
-      return res.send({ state: 2, message: "失败", data: result });
-    }
-  });
-})
-
-
-
-
-
-app.post('/tjm1',(req,res)=>{
-    const { tjm1 } = req.body;
-  // const sql = `SELECT * FROM tongji`;
-  const sql = `UPDATE tongji SET m1='${tjm1}' where id=0`;
-    const values = [
-      tjm1
-  ];
-
-  db.query(sql, (err, result) => {
-    if (err) {
-      return res.send({ state: 1, message: err });
-    }
-    if (result) {
-      return res.send({ state: 200, message: "添加成功", data: result });
-    } else {
-      return res.send({ state: 2, message: "失败", data: result });
-    }
-  });
-})
-
-
-
-app.post('/tjm2',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET m2='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
-
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
+// })
 
 
 
 
 
 
-app.post('/tjm3',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET m3='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
+// app.post('/tjm3',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET m3='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
 
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
-
-
-
-
-
-app.post('/tjm4',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET m4='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
-
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
 
 
 
 
 
-app.post('/tjm5',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET m5='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
+// app.post('/tjm4',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET m4='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
 
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
-app.post('/pos1',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET pos1='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
-app.post('/pos100',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET pos100='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
-
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
-
-
-
-app.post('/tjm6',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET m6='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
-
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
-
-
-
-
-app.post('/gp',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET btntj='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
-
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
 
 
 
 
 
-app.post('/tjm7',(req,res)=>{
-  const { tjm1 } = req.body;
-// const sql = `SELECT * FROM tongji`;
-const sql = `UPDATE tongji SET m7='${tjm1}' where id=0`;
-  const values = [
-    tjm1
-];
+// app.post('/tjm5',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET m5='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
 
-db.query(sql, (err, result) => {
-  if (err) {
-    return res.send({ state: 1, message: err });
-  }
-  if (result) {
-    return res.send({ state: 200, message: "添加成功", data: result });
-  } else {
-    return res.send({ state: 2, message: "失败", data: result });
-  }
-});
-})
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
+// app.post('/pos1',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET pos1='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
+// app.post('/pos100',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET pos100='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
+
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
+
+
+
+// app.post('/tjm6',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET m6='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
+
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
+
+
+
+
+// app.post('/gp',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET btntj='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
+
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
+
+
+
+
+
+// app.post('/tjm7',(req,res)=>{
+//   const { tjm1 } = req.body;
+// // const sql = `SELECT * FROM tongji`;
+// const sql = `UPDATE tongji SET m7='${tjm1}' where id=0`;
+//   const values = [
+//     tjm1
+// ];
+
+// db.query(sql, (err, result) => {
+//   if (err) {
+//     return res.send({ state: 1, message: err });
+//   }
+//   if (result) {
+//     return res.send({ state: 200, message: "添加成功", data: result });
+//   } else {
+//     return res.send({ state: 2, message: "失败", data: result });
+//   }
+// });
+// })
 
 app.get('/',(req,res)=>{
   res.send('我是极客公司服务')
